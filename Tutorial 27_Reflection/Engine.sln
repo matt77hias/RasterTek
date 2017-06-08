@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Engine", "Engine\Engine.vcxproj", "{2EF3211D-F32A-4F0F-BD75-AE77119753F7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2EF3211D-F32A-4F0F-BD75-AE77119753F7}.Debug|Win32.ActiveCfg = Debug|Win32
+		{2EF3211D-F32A-4F0F-BD75-AE77119753F7}.Debug|Win32.Build.0 = Debug|Win32
+		{2EF3211D-F32A-4F0F-BD75-AE77119753F7}.Release|Win32.ActiveCfg = Release|Win32
+		{2EF3211D-F32A-4F0F-BD75-AE77119753F7}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

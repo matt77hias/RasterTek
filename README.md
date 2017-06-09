@@ -2,6 +2,8 @@
 
 ## About
 
+<p align="center"><img src="https://github.com/matt77hias/RasterTek/blob/master/res/Tutorial 49.png"></p>
+
 The source code of [RasterTek](http://www.rastertek.com/tutdx11.html)'s DirectX 11 tutorials (made ready to use in Visual Studio 2017). Documentation and further explanation can be found at [RasterTek](http://www.rastertek.com/tutdx11.html).
 
 I am not backing all the design decisions nor the used conventions, but the tutorials get the things done, obtain very pleasing results and are inspiring for people wanting to grasp the rendering pipeline (which is for most special effects less intuitive as opposed to ray tracing).

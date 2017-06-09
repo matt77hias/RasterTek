@@ -9,7 +9,7 @@ These tutorials require the obsolete [DirectX 11 SDK](https://www.microsoft.com/
 I am not backing all the design decisions nor the used conventions, but the tutorials get the things done, obtain very pleasing results and are inspiring for people wanting to grasp the rendering pipeline (which is for most special effects less intuitive as opposed to ray tracing).
 
 ## Use
-1. Install the [DirectX 11 SDK](https://www.microsoft.com/en-us/download/details.aspx?id=6812). (*It is possible that the installer ends with an error code. Nothing to worry about, since I think this is Microsoft's way of notifying the user of installing obsolete Microsoft Software. Roughly stated: if `C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)` is present and contains data the installation succeeded.*)
-2. Make sure the `DXSDK_DIR` environment variable is set.
-3. You can now open all .sln files and compile the projects.
+1. Install the [DirectX 11 SDK](https://www.microsoft.com/en-us/download/details.aspx?id=6812). *(It is possible that the installer ends with an error code. Nothing to worry about, since I think this is Microsoft's way of notifying the user of installing obsolete Microsoft Software. Roughly stated: if `C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)` is present and contains data the installation succeeded.)*
+2. Make sure the `DXSDK_DIR` environment variable is set. *(If you also use the obsolete DirectX 9 SDK, you need to decide whether `DXSDK_DIR` points to the DirectX 9 SDK or DirectX 11 SDK.)*
+3. You can now open all `.sln` files and compile the projects.
 4. Have fun!

@@ -41,15 +41,15 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(DXSDK_DIR)Include;$(VC_IncludePath);C:\Program Files (x86)\Windows Kits\8.1\Include\um;C:\Program Files (x86)\Windows Kits\8.1\Include\shared;</IncludePath>
-    <LibraryPath>$(DXSDK_DIR)Lib\x86\;$(VC_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86;C:\Program Files (x86)\Windows Kits\8.1\Lib\winv6.3\um\x86;</LibraryPath>
+    <IncludePath>$(DXSDK_DIR)\Include;$(VC_IncludePath);C:\Program Files (x86)\Windows Kits\8.1\Include\um;C:\Program Files (x86)\Windows Kits\8.1\Include\shared;</IncludePath>
+    <LibraryPath>$(DXSDK_DIR)\Lib\x86\;$(VC_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86;C:\Program Files (x86)\Windows Kits\8.1\Lib\winv6.3\um\x86;</LibraryPath>
     <ExecutablePath>$(VC_ExecutablePath_x86);$(VS_ExecutablePath);C:\Program Files (x86)\Windows Kits\8.1\bin\x86;$(MSBuild_ExecutablePath);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH);</ExecutablePath>
     <LibraryWPath />
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(DXSDK_DIR)Include;$(VC_IncludePath);C:\Program Files (x86)\Windows Kits\8.1\Include\um;C:\Program Files (x86)\Windows Kits\8.1\Include\shared;</IncludePath>
-    <LibraryPath>$(DXSDK_DIR)Lib\x86\;$(VC_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86;C:\Program Files (x86)\Windows Kits\8.1\Lib\winv6.3\um\x86;</LibraryPath>
+    <IncludePath>$(DXSDK_DIR)\Include;$(VC_IncludePath);C:\Program Files (x86)\Windows Kits\8.1\Include\um;C:\Program Files (x86)\Windows Kits\8.1\Include\shared;</IncludePath>
+    <LibraryPath>$(DXSDK_DIR)\Lib\x86\;$(VC_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86;C:\Program Files (x86)\Windows Kits\8.1\Lib\winv6.3\um\x86;</LibraryPath>
     <ExecutablePath>$(VC_ExecutablePath_x86);$(VS_ExecutablePath);C:\Program Files (x86)\Windows Kits\8.1\bin\x86;$(MSBuild_ExecutablePath);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH);</ExecutablePath>
     <LibraryWPath />
   </PropertyGroup>

@@ -26,10 +26,27 @@ ColorShaderClass::~ColorShaderClass()
 bool ColorShaderClass::Initialize(ID3D11Device* device, HWND hwnd)
 {
 	bool result;
+	wchar_t vsFilename[128];
+	wchar_t psFilename[128];
+	int error;
 
+
+	// Set the filename of the vertex shader.
+	error = wcscpy_s(vsFilename, 128, L"../Engine/color.vs");
+	if(error != 0)
+	{
+		return false;
+	}
+
+	// Set the filename of the pixel shader.
+	error = wcscpy_s(psFilename, 128, L"../Engine/color.ps");
+	if(error != 0)
+	{
+		return false;
+	}
 
 	// Initialize the vertex and pixel shaders.
-	result = InitializeShader(device, hwnd, L"../Engine/color.vs", L"../Engine/color.ps");
+	result = InitializeShader(device, hwnd, vsFilename, psFilename);
 	if(!result)
 	{
 		return false;
@@ -48,8 +65,8 @@ void ColorShaderClass::Shutdown()
 }
 
 
-bool ColorShaderClass::Render(ID3D11DeviceContext* deviceContext, int indexCount, D3DXMATRIX worldMatrix, D3DXMATRIX viewMatrix, 
-							  D3DXMATRIX projectionMatrix)
+bool ColorShaderClass::Render(ID3D11DeviceContext* deviceContext, int indexCount, XMMATRIX worldMatrix, XMMATRIX viewMatrix,
+							  XMMATRIX projectionMatrix)
 {
 	bool result;
 
@@ -85,8 +102,8 @@ bool ColorShaderClass::InitializeShader(ID3D11Device* device, HWND hwnd, WCHAR* 
 	pixelShaderBuffer = 0;
 
     // Compile the vertex shader code.
-	result = D3DX11CompileFromFile(vsFilename, NULL, NULL, "ColorVertexShader", "vs_5_0", D3D10_SHADER_ENABLE_STRICTNESS, 0, NULL, 
-								   &vertexShaderBuffer, &errorMessage, NULL);
+	result = D3DCompileFromFile(vsFilename, NULL, NULL, "ColorVertexShader", "vs_5_0", D3D10_SHADER_ENABLE_STRICTNESS, 0,
+								&vertexShaderBuffer, &errorMessage);
 	if(FAILED(result))
 	{
 		// If the shader failed to compile it should have writen something to the error message.
@@ -104,8 +121,8 @@ bool ColorShaderClass::InitializeShader(ID3D11Device* device, HWND hwnd, WCHAR* 
 	}
 
     // Compile the pixel shader code.
-	result = D3DX11CompileFromFile(psFilename, NULL, NULL, "ColorPixelShader", "ps_5_0", D3D10_SHADER_ENABLE_STRICTNESS, 0, NULL, 
-								   &pixelShaderBuffer, &errorMessage, NULL);
+	result = D3DCompileFromFile(psFilename, NULL, NULL, "ColorPixelShader", "ps_5_0", D3D10_SHADER_ENABLE_STRICTNESS, 0,
+								&pixelShaderBuffer, &errorMessage);
 	if(FAILED(result))
 	{
 		// If the shader failed to compile it should have writen something to the error message.
@@ -228,7 +245,7 @@ void ColorShaderClass::ShutdownShader()
 void ColorShaderClass::OutputShaderErrorMessage(ID3D10Blob* errorMessage, HWND hwnd, WCHAR* shaderFilename)
 {
 	char* compileErrors;
-	unsigned long bufferSize, i;
+	unsigned long long bufferSize, i;
 	ofstream fout;
 
 
@@ -261,8 +278,8 @@ void ColorShaderClass::OutputShaderErrorMessage(ID3D10Blob* errorMessage, HWND h
 }
 
 
-bool ColorShaderClass::SetShaderParameters(ID3D11DeviceContext* deviceContext, D3DXMATRIX worldMatrix, D3DXMATRIX viewMatrix,
-										   D3DXMATRIX projectionMatrix)
+bool ColorShaderClass::SetShaderParameters(ID3D11DeviceContext* deviceContext, XMMATRIX worldMatrix, XMMATRIX viewMatrix,
+										   XMMATRIX projectionMatrix)
 {
 	HRESULT result;
     D3D11_MAPPED_SUBRESOURCE mappedResource;
@@ -271,9 +288,9 @@ bool ColorShaderClass::SetShaderParameters(ID3D11DeviceContext* deviceContext, D
 
 
 	// Transpose the matrices to prepare them for the shader.
-	D3DXMatrixTranspose(&worldMatrix, &worldMatrix);
-	D3DXMatrixTranspose(&viewMatrix, &viewMatrix);
-	D3DXMatrixTranspose(&projectionMatrix, &projectionMatrix);
+	worldMatrix = XMMatrixTranspose(worldMatrix);
+	viewMatrix = XMMatrixTranspose(viewMatrix);
+	projectionMatrix = XMMatrixTranspose(projectionMatrix);
 
 	// Lock the constant buffer so it can be written to.
 	result = deviceContext->Map(m_matrixBuffer, 0, D3D11_MAP_WRITE_DISCARD, 0, &mappedResource);

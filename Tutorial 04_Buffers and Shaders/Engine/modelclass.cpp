@@ -91,14 +91,14 @@ bool ModelClass::InitializeBuffers(ID3D11Device* device)
 	}
 
 	// Load the vertex array with data.
-	vertices[0].position = D3DXVECTOR3(-1.0f, -1.0f, 0.0f);  // Bottom left.
-	vertices[0].color = D3DXVECTOR4(0.0f, 1.0f, 0.0f, 1.0f);
+	vertices[0].position = XMFLOAT3(-1.0f, -1.0f, 0.0f);  // Bottom left.
+	vertices[0].color = XMFLOAT4(0.0f, 1.0f, 0.0f, 1.0f);
 
-	vertices[1].position = D3DXVECTOR3(0.0f, 1.0f, 0.0f);  // Top middle.
-	vertices[1].color = D3DXVECTOR4(0.0f, 1.0f, 0.0f, 1.0f);
+	vertices[1].position = XMFLOAT3(0.0f, 1.0f, 0.0f);  // Top middle.
+	vertices[1].color = XMFLOAT4(0.0f, 1.0f, 0.0f, 1.0f);
 
-	vertices[2].position = D3DXVECTOR3(1.0f, -1.0f, 0.0f);  // Bottom right.
-	vertices[2].color = D3DXVECTOR4(0.0f, 1.0f, 0.0f, 1.0f);
+	vertices[2].position = XMFLOAT3(1.0f, -1.0f, 0.0f);  // Bottom right.
+	vertices[2].color = XMFLOAT4(0.0f, 1.0f, 0.0f, 1.0f);
 
 	// Load the index array with data.
 	indices[0] = 0;  // Bottom left.
